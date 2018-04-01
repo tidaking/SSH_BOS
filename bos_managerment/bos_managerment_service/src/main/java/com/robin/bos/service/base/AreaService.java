@@ -21,6 +21,8 @@ public interface AreaService {
 
     public List<Area> findAll();
 
+    public List<Object[]> exportCharts();
+
 
 }
   

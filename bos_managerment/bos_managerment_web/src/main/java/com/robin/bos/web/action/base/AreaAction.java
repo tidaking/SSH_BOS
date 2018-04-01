@@ -231,5 +231,20 @@ public class AreaAction extends BaseAction<Area>{
         workbook.close();
         return NONE;
     }
+    
+    @Action("areaAction_exportCharts")
+    public String exportCharts() throws IOException
+    {
+        System.out.println("test");
+        List<Object[]> list = new ArrayList<>();
+        list = areaService.exportCharts();
+        list2Json(list, null);
+        
+        System.out.println(list.toString());
+        
+        return NONE;
+    }
+    
+    
 }
   

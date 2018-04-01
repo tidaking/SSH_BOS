@@ -6,14 +6,15 @@
 	<!--
 		maxElementsInMemory: 在内存中存储对象的最大个数
 		eternal : 设置数据是否永久保存
-		timeToIdleSeconds : 最大闲置时间
-		timeToLiveSeconds : 最大存活时间
+		timeToIdleSeconds : 最大闲置时间    缓存创建以后，最后一次访问缓存的日期至失效之时的时间间隔
+		timeToLiveSeconds : 最大存活时间    缓存自创建日期起至失效时的间隔时间
 		maxElementsOnDisk : 在硬盘中存储对象的最大个数
 		diskExpiryThreadIntervalSeconds : 检查的线程的时间间隔
 		memoryStoreEvictionPolicy : LRU(最近最少使用) / FIFO(先进先出)
+		localTempSwap：当堆内存或者非堆内存里面的元素已经满了的时候，将其中的元素临时的存放在磁盘上，一旦重启就会消失。
 	-->
 	<defaultCache maxElementsInMemory="10000" eternal="false"
-		timeToIdleSeconds="10" timeToLiveSeconds="10"
+		timeToIdleSeconds="10" timeToLiveSeconds="15"
 		maxElementsOnDisk="10000000" diskExpiryThreadIntervalSeconds="120"
 		memoryStoreEvictionPolicy="LRU">
 		<persistence strategy="localTempSwap" />
